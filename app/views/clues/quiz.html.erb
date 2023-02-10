@@ -1,0 +1,16 @@
+
+<%= stylesheet_link_tag "style", media: "all", "data-turbolinks-track": "reload" %>
+
+<div class="form-container">
+  <% if @conclusion.present? %>
+    <div class="conclusion">
+      <h1>Conclusion:</h1>
+      <h1><%= @conclusion %></h1>
+      <%= link_to "Start Again", root_path, class: "btn" %>
+    </div>
+  <% else %>
+      <h1><%= @question["question"] %></h1>
+        <%= button_to "Yes", question_response_path, params:{:response => "Yes"} %>
+        <%= button_to "No", question_response_path, params:{:response => "No"} %>   
+  <% end %>
+</div>
