@@ -1,7 +1,7 @@
 class CluesController < ApplicationController
   def index
+    # This service curently using dummy Endpoint
     Clue.create(file_content: QuestionService.fetch_data)
-    # Clue.create(file_content: DUMMY_DATA)
     reset_session
   end
 
